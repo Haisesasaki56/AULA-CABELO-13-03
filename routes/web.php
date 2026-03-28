@@ -16,3 +16,5 @@ Route::get('/view_contatos', function (){
 });
 
 Route::post('/contato', ['uses'=>'App\Http\Controllers\ContatoControle@index'] );
+
+Route::post('/contatosSalvar', ['uses'=>'App\Http\Controllers\ContatoControle@salvarDados'] );

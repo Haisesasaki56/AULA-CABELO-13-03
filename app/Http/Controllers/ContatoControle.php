@@ -6,10 +6,17 @@ use Illuminate\Http\Request;
 
 class ContatoControle extends Controller
 {
-    //
-    public function index(Request $req) {
-        //return view("contato");
-        //return "Estou no controle !!";
-        return 'nome:'.$req['nome'].'<br>senha:'.$req['senha'];
+    public function salvarDados(Request $req) {
+        $contatos = [
+            ["nome"=> $req['nome'], "cel"=> $req['cel']]  
+        ];
+        return view("contatos.index",compact('contatos'));
+    }
+    public function index() {
+$contatos = [
+[ "nome"=>"maria", "cel"=>"998881121"],
+[ "nome"=>"joao", "cel"=>"977881111"] ];
+return view("contatos.index",
+compact('contatos'));
     }
 }
